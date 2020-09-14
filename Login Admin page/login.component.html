@@ -1,0 +1,38 @@
+
+<div class="container-fluid">
+  <h2 style="color:white;">Administrator</h2>
+  <div id=login class="col-sm-5">
+  <form #LoginForm="ngForm" (ngSubmit)="loginAdmin()">
+  <h1>Login</h1>
+  <br><br>
+    <div class="form-group">
+      <label for="email">Employee Id:</label><br>
+      <input type="text" name="id" id="id"  required [(ngModel)]="admin.id"  #id="ngModel"
+          [class.is-invalid]="(id.invalid && id.touched) || id.dirty"
+          >
+            <div class="validate" *ngIf="(id.invalid && id.touched) || id.dirty">
+            <small *ngIf="id.errors?.required" class="text-danger">Employee Id is required</small>
+            </div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label><br>
+      <input type="password"  name="psw" id="psw" required ngModel [(ngModel)]="admin.password" #pwd="ngModel" 
+          [class.is-invalid]="(pwd.invalid && pwd.touched) || pwd.dirty"
+          >
+            <div class="validate" *ngIf="(pwd.invalid && pwd.touched) || pwd.dirty">
+            <small *ngIf="pwd.errors?.required" class="text-danger">Password is required</small>
+           
+             </div>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <br><br>
+    <button [disabled]="LoginForm.form.invalid" type="submit" class="btn btn-success">Login</button><span>&nbsp;&nbsp;</span>
+    <span class="psw"> <a href="#">Forgot password?</a></span>
+    <br><br>
+    <span><a href="/register">New user?Register</a></span>
+   
+  </form><br><br><br><br><br>
+  </div><br><br><br><br><br><br>
+</div>
