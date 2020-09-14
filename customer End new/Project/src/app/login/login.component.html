@@ -1,0 +1,60 @@
+<!-- <div class="container"><form #loginform="ngForm" (ngSubmit)="loginCust()">
+    <small class="text-danger">{{msg}}</small>
+    <div class="form-group">
+      <label for="phone">Mobile Number:</label>
+      <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]=cust.phoneNum>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" placeholder="Enter password" name="pwd" [(ngModel)]=cust.password>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <div class="container signin">
+    <p>Already hava an account? <a href="/register">Register here</a>.</p>
+    </div> 
+  </form>
+</div> -->
+
+<app-header></app-header>
+<div class="container-fluid">
+  <br><br>
+  <div align="center" id=login>
+  <form #LoginForm="ngForm" (ngSubmit)="loginCust()" align="center">
+  <h1>Login Here</h1>
+  <br><br>
+    <div class="form-group">
+      <label for="email">Registered Mobile Number</label><br>
+      <input type="text" name="ph" id="ph"  required [(ngModel)]="cust.phoneNum"  #id="ngModel"
+          [class.is-invalid]="(id.invalid && id.touched) || id.dirty"
+          >
+            <div class="validate" *ngIf="(id.invalid && id.touched) || id.dirty">
+            <small *ngIf="id.errors?.required" class="text-danger">Mobile number is required</small>
+            </div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password</label><br>
+      <input type="password"  name="psw" id="psw" required ngModel [(ngModel)]="cust.password" #pwd="ngModel" 
+          [class.is-invalid]="(pwd.invalid && pwd.touched) || pwd.dirty"
+          >
+            <div class="validate" *ngIf="(pwd.invalid && pwd.touched) || pwd.dirty">
+            <small *ngIf="pwd.errors?.required" class="text-danger">Password is required</small>
+           
+             </div>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <br><br>
+    <button [disabled]="LoginForm.form.invalid" type="submit" class="btn btn-success">Login</button><span>&nbsp;&nbsp;</span>
+    <span class="psw"> <a href="#">Forgot password?</a></span>
+    <br><br>
+    <span><a href="/register">New user?Register</a></span>
+   
+  </form><br><br><br><br><br>
+  </div><br><br><br><br><br><br>
+</div>

@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Plans details</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Plan Name</th>
+            <th>Data Pack</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let plan of plans | async">
+            <td>{{plan.id}}</td>
+            <td>{{plan.name}}</td>
+            <td>{{plan.dataPack}}GB per Day</td>
+            <td>{{plan.amount}}</td>
+            <td>
+                <button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Recharge</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span><a href="/prepaidcurrentplans">Current plans</a></span>
+  </div>
+  
+  

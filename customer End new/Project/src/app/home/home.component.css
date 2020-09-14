@@ -1,0 +1,47 @@
+.d-block {
+    height: 400px;
+    width: 100%;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    mask-type: alpha;
+    height: 100px;
+    width: 100px;
+    outline: black;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+
+  .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+
+  }
+
+  .carousel-caption {
+    width: 300px;
+    background-color: rgb(119, 92, 92);
+    margin-bottom: -20px;
+    border-radius: 5%;
+    margin-left: -150px;
+    ;
+  }
+
+  .card {
+    margin: auto;
+  }
+
+  .btn-success {
+    color: rgb(44, 41, 41);
+    font-family: Avantgarde, TeX Gyre;
+  }
+  .body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  p {
+    font-family: Lato;
+  }
