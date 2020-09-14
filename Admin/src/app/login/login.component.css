@@ -1,0 +1,19 @@
+.container-fluid{
+    background-image: url("https://www.workplacetesting.com/images/uploads/dreamstime_m_78964061.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+     background-position: center center;
+    margin:0px;
+  }
+  #login
+  {
+    padding: 50px 60px 70px 60px;
+    width: 586px;
+    height: auto;
+    background: #fff;
+    margin-left: 165px;
+    border-radius: 10px;
+    border-bottom-width: 20%;
+  }
+
