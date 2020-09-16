@@ -1,0 +1,17 @@
+<p>customer-feedback works!</p>
+<div class="dropdown" id="drop1" >
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Customer Query
+    </a>
+  
+    <div  class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">All</a>
+      <a class="dropdown-item" routerLink="answered">Answered</a>
+      <a class="dropdown-item" routerLink="notanswered">Not answered</a>
+    </div>
+  
+  </div>
+  <br><br><br>
+  <div class="forservice">
+   <router-outlet></router-outlet>
+  </div>
