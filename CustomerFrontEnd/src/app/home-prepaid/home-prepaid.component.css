@@ -1,0 +1,20 @@
+.register
+{
+    background-image:url("/assets/Images/login.png");
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    background-position: center center;
+}
+.container
+{
+    border: solid;
+    border-radius: 2%;
+    border-color: rgb(177, 170, 170);
+    background-color: rgb(177, 170, 170);
+    padding-top: 1.5%;
+    padding-bottom:1.5% ;
+    width: 100%;
+    margin-top: 2%;
+}
