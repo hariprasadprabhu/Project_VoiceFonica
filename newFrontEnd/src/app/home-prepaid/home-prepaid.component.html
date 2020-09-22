@@ -1,0 +1,51 @@
+<app-headernav-prepaid></app-headernav-prepaid>
+<section class="register">
+    <br>
+    <div class="container">
+        <h3 align="center" [class]="colrtime">{{msg}} : {{demo}}</h3>
+        <br><ng-container *ngIf="activeid!=0">
+          <div class="row">
+            <div class="col-sm-4">
+              <h4 align="center">Date of Recharge</h4>
+              <h3 align="center">{{activedate}}</h3>
+            </div>
+            <div class="col-sm-4">
+              <h4 align="center">Recharge Amount</h4>
+              <h3 align="center">{{activeamount}}</h3>
+            </div>
+            <div class="col-sm-4">
+              <h4 align="center">Date per Day</h4>
+              <h3 align="center">{{activepack}} GB</h3>
+            </div>
+          </div>  
+        </ng-container>
+        
+      </div>
+      <h3 style="margin-top: 6%;">Recharge History</h3>
+    <table  class="table table-striped">
+        
+      <thead>
+          <tr align="center">
+            <th align="center">STATUS</th>
+            <th align="center">DATE OF RECHARGE</th>
+            <th align="center">DATA / DAY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let plan of res | async">
+              <ng-container *ngIf="plan.expired==1; else elseTemplate">
+                <td align="center" style="color: red;">Expired</td>
+                <td align="center">{{plan.d}}</td>
+                <td align="center">{{plan.plan_id}}GB per Day</td>
+              </ng-container>
+              
+            
+            
+          </tr>
+        </tbody>
+      </table>
+    
+</section>
+<div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#">VoiceFonica.com</a>
+  </div>

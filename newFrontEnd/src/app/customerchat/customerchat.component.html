@@ -1,0 +1,25 @@
+<h2 align="center">Chat With Customer Support Person</h2>
+
+<div style="margin-left: 500px; height: 500px;border: solid;border-color: black;width: 550px; overflow: scroll;" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <div class="container">
+        <img src="/assets/Images/adminside.png" alt="Avatar" style="width:100%;">
+        <p style="float: left;">Hello. How can i help you?</p>
+        <span class="time-right">11:00</span>
+      </div>
+<div *ngFor="let item of chats | async">
+<div *ngIf="item.admin_id!=0" class="container">
+  <img src="/assets/Images/adminside.png" alt="Avatar" style="width:100%;">
+  <p style="float: left;">{{item.message}}</p>
+  <span class="time-right">11:00</span>
+</div>
+
+<div style="margin: 20px;" *ngIf="item.admin_id==0" class="container darker">
+  <img src="/assets/Images/customerside.jpg" alt="Avatar" class="right" style="width:100%;">
+  <p style="float: right;">{{item.message}}</p>
+  <span class="time-left">11:01</span>
+</div>
+</div>
+</div>
+<div style="margin-top: 1%;" align="center">
+<input type="text" id="text" [(ngModel)]="chat.message"  #msg="ngModel"><button (click)="call()">Send</button>
+</div>
