@@ -1,12 +1,7 @@
-import { Route } from '@angular/compiler/src/core';
-import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-
-import {NgForm} from '@angular/forms';
+import { Admin } from '../admin';
+import {LoginService} from '../login.service';
 import { Router } from '@angular/router';
-
-import {RegidtrationService} from '../regidtration.service';
-import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -14,27 +9,32 @@ import { User } from '../user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user =new User();
-  msg='';
-
-  constructor( private _service : RegidtrationService, private _router : Router) { }
+  msg="";
+  admin=new Admin();
+  constructor(private service:LoginService,private router:Router) { }
 
   ngOnInit(): void {
   }
-  loginUser()
+
+  loginAdmin()
   {
-    this._service.loginUserFromRemote(this.user).subscribe(
-      data => {console.log("response received");
-      this._router.navigate(['/loginsuccess'])
-    },
-      error => {
-        console.log("exception occured");
-        this.msg="Bad credentials, please enter valid email id and password";
+    this.service.checkAdmin(this.admin).subscribe(
+      data=>{console.log("response recived");
+      if(data==null)
+      {
+        console.log("error");
+        this.router.navigate(['/login']);
+        this.msg="Bad Credentials, Please enter valid number and password";
+        
       }
-    )
-    }
-    gotoregistration()
-    {
-      this._router.navigate(['/registration'])
-    }
+      else
+      {
+      this.msg="";
+      this.router.navigate(['/customerdetails']);
+      }
+    },
+      error=>{console.log("exception occured");}
+      
+    );
+  }
 }

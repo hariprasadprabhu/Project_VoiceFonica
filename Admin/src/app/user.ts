@@ -1,16 +1,15 @@
-import { NumberValueAccessor } from '@angular/forms';
-
 export class User 
 {
-    eid:number;
-    fname:string;
-    lname:string;
-    email:string;
-    password:number;
+	id:number;
     phno:number;
-
+	fname:string;
+	lname:string;
+	altPhno:number;
+	type:string;
+	adharNo:number;
+    address:string;
+    
     constructor()
-    {
-        
-    }
+    {}
+	
 }

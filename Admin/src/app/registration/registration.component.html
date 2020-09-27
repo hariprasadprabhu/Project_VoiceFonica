@@ -1,9 +1,10 @@
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">VoizFonica - Admin </a></nav>
+  
 <div class="container-fluid">
     <div class="Register">
-      <h2 style="color:white;">.</h2>
     <div class="col-sm-5">
-    <form #Registerform="ngForm" (ngSubmit)="registerUser()">
+    <form #RegForm="ngForm" (ngSubmit)="registerAdmin()">
       
         <br> <br>
         <div class="Register-form">
@@ -12,23 +13,23 @@
           
           <div >
           
-          <input type="text" placeholder="Enter First Name *" name="fname" id="fname" required [(ngModel)]="user.fname"  #name="ngModel"
+          <input type="text" placeholder="Enter First Name *" name="fname" id="fname" required [(ngModel)]="admin.fname"  #name="ngModel"
           [class.is-invalid]="(name.invalid && name.touched) || name.dirty"
           >
             <div class="validate" *ngIf="(name.invalid && name.touched) || name.dirty">
             <small *ngIf="name.errors?.required" class="text-danger">First name is required</small>
             </div>
 
-          <input type="text" placeholder="Enter Last Name" name="lname" id="lname"  [(ngModel)]="user.lname">
+          <input type="text" placeholder="Enter Last Name" name="lname" id="lname"  [(ngModel)]="admin.lname">
     
-          <input type="text" placeholder="Enter Id *" name="id" id="id"  required [(ngModel)]="user.eid"  #id="ngModel"
+          <input type="text" placeholder="Enter Id *" name="id" id="id"  required [(ngModel)]="admin.id"  #id="ngModel"
           [class.is-invalid]="(id.invalid && id.touched) || id.dirty"
           >
             <div class="validate" *ngIf="(id.invalid && id.touched) || id.dirty">
             <small *ngIf="id.errors?.required" class="text-danger">Employee Id is required</small>
             </div>
 
-          <input type="email" placeholder="Enter Email *" name="email" id="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel="pwd" [(ngModel)]="user.email"  #email="ngModel"
+          <input type="email" placeholder="Enter Email *" name="email" id="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel="pwd" [(ngModel)]="admin.email"  #email="ngModel"
           [class.is-invalid]="(email.invalid && email.touched) || email.dirty"
           >
             <div class="validate" *ngIf="(email.invalid && email.touched) || email.dirty">
@@ -36,7 +37,7 @@
             <small *ngIf="email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
             </div>
 
-          <input type="text" placeholder="Enter Contact number *" name="ph" id="ph" required  [(ngModel)]="user.phno" #ph="ngModel" 
+          <input type="text" placeholder="Enter Contact number *" name="ph" id="ph" required  [(ngModel)]="admin.phno" #ph="ngModel" 
           [class.is-invalid]="(ph.invalid && ph.touched) || ph.dirty"
           >
             <div class="validate" *ngIf="(ph.invalid && ph.touched) || ph.dirty">
@@ -44,7 +45,7 @@
             </div>
 
           
-          <input type="password" (input)="OnInput($event)" placeholder="Enter Password *" name="psw" id="psw" required pattern="(?=^.{8,}$)((?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  ngModel [(ngModel)]="user.password" #pwd="ngModel" #password
+          <input type="password" (input)="OnInput($event)" placeholder="Enter Password *" name="psw" id="psw" required pattern="(?=^.{8,}$)((?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  ngModel [(ngModel)]="admin.password" #pwd="ngModel" #password
           [class.is-invalid]="(pwd.invalid && pwd.touched) || pwd.dirty"
           >
             <div class="validate" *ngIf="(pwd.invalid && pwd.touched) || pwd.dirty">
@@ -71,7 +72,7 @@
          </div>
 
         </div>
-        <button [disabled]="Registerform.form.invalid" type="submit"  class="btn btn-success" name="submit" id="submit">Submit</button><br><br>
+        <button [disabled]="RegForm.form.invalid" type="submit"  class="btn btn-success" name="submit" id="submit">Submit</button><br><br>
         <div class="container signin">
           <p>Already have an account? <a href="/login">Log in</a>.</p>
         </div></div> <br> <br>

@@ -1,0 +1,8 @@
+<div class="container mt-5">
+    <div id="recaptcha"></div>
+    <button (click)="otp();" class="btn btn-warning">Verify user by phoneNumber</button>
+    <div *ngIf="toggle">
+        <input type="text" [(ngModel)]="code" name="code" placeholder="Enter Code">
+        <button (click)="verify();">Verify</button>
+    </div>
+</div>
